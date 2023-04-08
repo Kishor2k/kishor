@@ -1,0 +1,86 @@
+.works{
+    @include bg-gradient($white, $secondary-100);
+}
+// projects
+.projects{
+    display: grid;
+    gap:var(--gap);
+    .btn{
+        @include btn($secondary, $white);
+        margin-bottom: 1rem;
+    }
+}
+.card{
+    background:$white;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap:var(--gap);
+    padding: $base-padding * 0.5;
+    border: 1px solid $light-gray;
+    border-radius: $base-border-radius * 4;
+    @include box-shadow(0px,5px,20px, 0.1);
+}
+.project-title{
+    text-transform: capitalize;
+}
+.project-subtitle{
+    margin-top: calc(var(--mt) * 0.5);
+}
+
+.project-features{
+    margin-top: var(--mt);
+    list-style: circle;
+    padding-left:2ch;
+}
+
+
+
+.nht .project-image{
+    @include project-image(url(../images/NHT_Mockup.png));
+}
+.uniquecatering .project-image{
+    @include project-image(url(../images/Unique_Catering_Mockup.png));
+}
+.kevin .project-image{
+    @include project-image(url(../images/Kevin_Mockup.png));
+}
+.todo .project-image{
+    @include project-image(url(../images/Todo_Mockup.png));
+}
+.graphics{
+    display: grid;
+    gap:var(--gap);
+    margin-top: calc(var(--mt) * 5);
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+.mockup{
+    position: relative;
+    height:300px;
+    border-radius:$base-border-radius * 2;
+    overflow: hidden;
+    &.card{
+        background: url(../images/Unique_Catering_Card.jpg) center/cover ;
+    }
+    &.pumpkin{
+        background: url(../images/Pumpkin_Store.jpg) right/cover ;
+    }
+    &.cup{
+        background: url(../images/NHT_Cup.jpg) center/cover ;
+    }
+    &.tea{
+        background: url(../images/NHT_Paper_Bag.png) center/cover ;
+    }
+}
+
+.mockup-text{
+    position: absolute;
+    bottom:0;
+    padding: 10px 20px;
+    width:100%;
+    background:$accent;
+    color:$white;
+    text-align: center;
+    &.alter{
+        background:$secondary;
+    }
+}

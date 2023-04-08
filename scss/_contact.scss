@@ -1,0 +1,61 @@
+.contact {
+  position: relative;
+  background: url(../images/pattern.svg);
+}
+.contact .head {
+  position: relative;
+}
+.arrow {
+  position: absolute;
+  top: 20px;
+  left: 200px;
+  display: none;
+}
+.contact-left {
+  max-width: 600px;
+}
+.contact-detail {
+  margin-top: var(--mt);
+}
+.row {
+  @extend .flex;
+  justify-content: start;
+  ion-icon {
+    color: $primary;
+  }
+}
+.contact-right {
+  margin-top: calc(var(--mt) * 2);
+}
+.form {
+  label {
+    display: block;
+    padding-bottom: 8px;
+  }
+  input,
+  textarea {
+    width: 100%;
+    font-family: inherit;
+    padding: $base-padding * 0.4;
+    border: 1px solid $gray;
+    color: inherit;
+    border-radius: $base-border-radius;
+    &:hover,
+    &:focus {
+      outline: none;
+      border: 1px solid $accent;
+    }
+  }
+  textarea {
+    resize: none;
+    height: 100px;
+  }
+  .btn {
+    margin-top: var(--mt);
+    font-family: inherit;
+    border: 0;
+    color: $white;
+    cursor: pointer;
+    border: 1px solid $accent;
+  }
+}

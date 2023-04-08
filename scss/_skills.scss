@@ -1,0 +1,104 @@
+// skills
+.skills-tools {
+  position: relative;
+}
+.skills-tools::before {
+  @include pseudo;
+  background: url("../images/ccchaos.svg") center/70% no-repeat;
+  z-index: -1;
+  transform: translateX(-50%);
+  opacity: 0.1;
+}
+.skills-tools::after {
+  @include pseudo;
+  background: url("../images/ccchaos.svg") right center/70% no-repeat;
+  z-index: -1;
+  transform: translateX(40%) rotate(45deg);
+  opacity: 0.1;
+}
+.skill {
+  position: relative;
+  @extend .flex;
+  background: $white;
+  padding: $base-padding;
+  width: 300px;
+  border-radius: $base-border-radius * 4;
+  cursor: pointer;
+  @include transition;
+}
+.skill::before {
+  @include pseudo;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: $base-border-radius * 4;
+  transform: rotate(5deg) translateX(15px) skew(5deg);
+  transform-origin: left;
+  filter: blur(5px);
+  z-index: -1;
+  @include transition;
+}
+.design::before {
+  transform: rotate(-5deg) translateX(-15px) skew(-5deg);
+  transform-origin: right;
+}
+.skill:hover::before {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.icon {
+  color: $white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  @include transition;
+}
+.skill:hover .icon {
+  outline: 2px solid $white;
+  outline-offset: -4px;
+}
+.web .icon {
+  background: $primary-light;
+}
+.design .icon {
+  background: $secondary;
+}
+.ui .icon {
+  background: $accent;
+}
+
+// tools
+.tools {
+  margin-top: var(--spacer);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: var(--gap);
+  p {
+    font-size: 12px;
+    text-transform: capitalize;
+    margin-top: calc(var(--mt) * 0.5);
+  }
+}
+.tool {
+  background: $white;
+  display: grid;
+  place-items: center;
+  padding: $base-padding * 0.7;
+  border-radius: $base-border-radius * 4;
+  border: 1px solid $light-gray;
+  cursor: pointer;
+  @include box-shadow(0, 10px, 10px, 0.1);
+  @include transition;
+  &:hover {
+    filter: saturate(1.5);
+    @include box-shadow(0, 10px, 20px, 0.2);
+  }
+  .tool-image {
+    width: 70%;
+  }
+}
+@include md {
+  .skill {
+    margin-inline: auto;
+  }
+}
