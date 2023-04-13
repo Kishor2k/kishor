@@ -806,6 +806,71 @@ header.sticky {
   border: 1px solid hsl(14, 100%, 60%);
 }
 
+.home-bg {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 200%;
+  z-index: -1;
+}
+.home-bg .shapes {
+  filter: opacity(0.1);
+}
+.home-bg #s-1, .home-bg #s-8, .home-bg #s-9 {
+  fill: hsl(199, 66%, 15%);
+}
+.home-bg #s-2, .home-bg #s-7, .home-bg #s-10 {
+  fill: hsl(345, 88%, 46%);
+}
+.home-bg #s-3, .home-bg #s-6, .home-bg #s-11 {
+  fill: hsl(177, 47%, 30%);
+}
+.home-bg #s-4, .home-bg #s-5, .home-bg #s-10 {
+  fill: hsl(14, 100%, 60%);
+}
+.home-bg .float1 {
+  animation: float1 5s infinite;
+}
+.home-bg .float2 {
+  animation: float2 7s infinite;
+}
+.home-bg .scale1 {
+  animation: scale1 10s infinite;
+}
+
+@keyframes float1 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(10px, -10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes float2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-5px, 10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes scale1 {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 html {
   scroll-behavior: smooth;
 }
