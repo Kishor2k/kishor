@@ -129,6 +129,27 @@
       transform: scale(1.1);
     }
   }
+  // skills-tools
+  .skills-tools::before {
+    @include pseudo;
+    background: url("../images/ccchaos.svg") center no-repeat;
+    z-index: -1;
+    transform: translateX(-50%);
+    opacity: 0.1;
+  }
+  .skills-tools::after {
+    @include pseudo;
+    background: url("../images/ccchaos.svg") right center no-repeat;
+    z-index: -1;
+    transform: translateX(40%) rotate(45deg);
+    opacity: 0.1;
+  }
+  // testimonials
+  .client-head {
+    min-height: 280px;
+    padding-bottom: 0;
+  }
+
   // contact
   .contact-wrapper {
     display: grid;

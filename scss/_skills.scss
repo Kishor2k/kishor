@@ -2,19 +2,10 @@
 .skills-tools {
   position: relative;
 }
-.skills-tools::before {
-  @include pseudo;
-  background: url("../images/ccchaos.svg") center/70% no-repeat;
-  z-index: -1;
-  transform: translateX(-50%);
-  opacity: 0.1;
-}
-.skills-tools::after {
-  @include pseudo;
-  background: url("../images/ccchaos.svg") right center/70% no-repeat;
-  z-index: -1;
-  transform: translateX(40%) rotate(45deg);
-  opacity: 0.1;
+
+.skills {
+  @extend .flex;
+  flex-direction: column;
 }
 .skill {
   position: relative;

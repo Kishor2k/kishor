@@ -1,79 +1,77 @@
-:root{
-    --gap: 1rem;
-    --spacer:3rem;
-    --mt: 1rem;
-    --bg-elem-w:500px;
-    --section-padding: 3rem;
-    --base-padding: 1.5rem; 
-    --flowspacer:1.5rem; 
+:root {
+  --gap: 1rem;
+  --spacer: 3rem;
+  --mt: 1rem;
+  --bg-elem-w: 500px;
+  --section-padding: 3rem;
+  --base-padding: 1.5rem;
+  --flowspacer: 1.5rem;
 }
 // colors
-$primary:hsl(199, 66%, 15%);
+$primary: hsl(199, 66%, 15%);
 $primary-light: hsl(177, 47%, 30%);
-$secondary: hsl(345, 88%, 46%); 
+$secondary: hsl(345, 88%, 46%);
 $accent: hsl(14, 100%, 60%);
 $offwhite: hsl(51, 33%, 96%);
 $white: hsl(0, 0%, 100%);
-$light-gray:hsl(0, 0%, 89%);
+$light-gray: hsl(0, 0%, 89%);
 $gray: hsl(0, 0%, 68%);
 // colors for bg
-$primary-100:hsl(200, 100%, 96%);
-$secondary-100: hsl(345, 13%, 94%); 
+$primary-100: hsl(200, 100%, 96%);
+$secondary-100: hsl(345, 13%, 94%);
 $accent-100: hsl(344, 100%, 98%);
 
-
-$colors:(
-    'primary': $primary,
-    'primary-light': $primary-light,
-    'secondary': $secondary,
-    'accent': $accent,
-    'offwhite': $offwhite,
-    'white': $white,
-    'light-gray': $light-gray,
-    'gray': $gray,
+$colors: (
+  "primary": $primary,
+  "primary-light": $primary-light,
+  "secondary": $secondary,
+  "accent": $accent,
+  "offwhite": $offwhite,
+  "white": $white,
+  "light-gray": $light-gray,
+  "gray": $gray,
 );
-
 
 // breakpoints
 $sm: 480px;
 $md: 720px;
 $lg: 1000px;
 $xl: 1200px;
-$breakpoints:(
-    'xs': 0,
-    'sm': $sm,
-    'md': $md,
-    'lg': $lg,
-    'xl': $xl,
+$breakpoints: (
+  "xs": 0,
+  "sm": $sm,
+  "md": $md,
+  "lg": $lg,
+  "xl": $xl,
 );
 
 $p-font-sizes: (
-    null : 14px,
-    $sm : 14px,
-    $md : 15px,
-    $lg : 15px,
-    $xl : 18px,
+  null: 12px,
+  $sm: 13px,
+  $md: 14px,
+  $lg: 15px,
+  $xl: 16px,
 );
 $h1-font-sizes: (
-    null :  32px,
-    $sm : 33px,
-    $md : 35px,
-    $lg: 40px,
-    $xl: 42px,
+  null: 32px,
+  $sm: 33px,
+  $md: 35px,
+  $lg: 40px,
+  $xl: 42px,
 );
-$h2-font-sizes:(
-    null: 19px,
-    $sm: 20px,
-    $md: 20px,
-    $lg: 22px,
-    $xl: 23px,
+$h2-font-sizes: (
+  null: 19px,
+  $sm: 20px,
+  $md: 20px,
+  $lg: 22px,
+  $xl: 23px,
 );
-$h3-font-sizes:(
-    null:15px,
-    $sm: 15px,
-    $md: 16px,
-    $lg: 18px,
-    $xl: 18px,
+$h3-font-sizes: (
+  null: 15px,
+  $sm: 15px,
+  $md: 16px,
+  $lg: 18px,
+  $xl: 18px,
 );
 //paddings
 $base-padding: 1.5rem;
@@ -83,8 +81,7 @@ $base-padding: 1.5rem;
 $base-border-radius: 4px;
 // generating color text classes eg: .primary-text
 @each $key, $val in $colors {
-    .#{$key}-text{
-        color: $val;
-    }
+  .#{$key}-text {
+    color: $val;
+  }
 }
-

@@ -5,7 +5,7 @@
 .clients {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: calc(var(--gap) * 2);
+  gap: calc(var(--gap));
   margin-top: var(--spacer);
 }
 .client {
@@ -17,8 +17,7 @@
 .client-head {
   position: relative;
   padding: $base-padding;
-  padding-bottom: 4rem;
-  min-height: 340px;
+  padding-bottom: 2rem;
   &::before {
     @include pseudo;
     background: url(../images/quote.svg) top 30px center/50% no-repeat;
@@ -30,6 +29,7 @@
   position: relative;
   padding: 3.5rem $base-padding 1rem;
   color: $white;
+
   h2 {
     padding-bottom: 0.5rem;
   }
@@ -59,7 +59,4 @@
   border: 3px solid $white;
   border-radius: 50%;
   overflow: hidden;
-}
-.client-links {
-  margin-top: 0.5rem;
 }
