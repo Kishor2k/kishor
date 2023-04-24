@@ -17,7 +17,7 @@
 .client-head {
   position: relative;
   padding: $base-padding;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
   &::before {
     @include pseudo;
     background: url(../images/quote.svg) top 30px center/50% no-repeat;

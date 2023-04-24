@@ -36,10 +36,10 @@ h1 {
 }
 h2,
 h3,
-h4,
-h5 {
+h4 {
   font-weight: 600;
 }
+
 img {
   max-width: 100%;
 }
@@ -88,4 +88,10 @@ section {
     height: 2px;
     background: $primary;
   }
+}
+.client-position {
+  font-weight: 400;
+  color: $offwhite;
+  margin-top: 4px;
+  margin-bottom: 12px;
 }

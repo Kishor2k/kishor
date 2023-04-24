@@ -105,3 +105,20 @@ zoomIn.forEach((zoom) => {
 toolZoom.forEach((tool) => {
   toolObserver.observe(tool);
 });
+
+const navigatorArrow = document.querySelector(".navigator-arrow");
+let arrowIcon = document.querySelector(".arrow-icon");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > window.innerHeight * 1.2) {
+    arrowIcon.setAttribute("name", "chevron-up-outline");
+  } else {
+    arrowIcon.setAttribute("name", "chevron-down-outline");
+  }
+});
+navigatorArrow.addEventListener("click", () => {
+  window.scrollBy(0, window.innerHeight - 200);
+  if (window.scrollY > window.innerHeight * 1.2) {
+    window.scrollBy(0, -window.scrollY);
+  }
+});

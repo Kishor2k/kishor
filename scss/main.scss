@@ -16,10 +16,12 @@
 @import "skills";
 @import "testimonials";
 @import "contact";
+@import "arrowAnimation";
 @import "home-bg";
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 body {
   font-family: "Lexend Deca", sans-serif;
@@ -27,6 +29,25 @@ body {
   font-weight: 400;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+}
+// navigator arrow
+.navigator-arrow {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: $secondary;
+  width: 40px;
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+}
+.arrow-icon {
+  animation: arrow 0.8s linear alternate infinite;
+  font-size: 1.5rem;
+  color: $white;
 }
 
 // home
@@ -44,11 +65,17 @@ body {
   .hero-image {
     display: none;
   }
+  .btn-outline {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
 }
 .btn-group {
   @extend .flex;
   margin-top: var(--mt);
 }
+
 // about
 .about {
   @include bg-gradient($white, $secondary-100);

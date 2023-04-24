@@ -243,8 +243,7 @@ h1 {
 
 h2,
 h3,
-h4,
-h5 {
+h4 {
   font-weight: 600;
 }
 
@@ -317,6 +316,13 @@ section {
   width: 30%;
   height: 2px;
   background: hsl(199, 66%, 15%);
+}
+
+.client-position {
+  font-weight: 400;
+  color: hsl(51, 33%, 96%);
+  margin-top: 4px;
+  margin-bottom: 12px;
 }
 
 header {
@@ -635,7 +641,7 @@ header.sticky {
 .tools {
   margin-top: var(--spacer);
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
   gap: var(--gap);
 }
 .tools p {
@@ -690,7 +696,7 @@ header.sticky {
 .client-head {
   position: relative;
   padding: 1.5rem;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
 }
 .client-head::before {
   content: "";
@@ -806,6 +812,14 @@ header.sticky {
   border: 1px solid hsl(14, 100%, 60%);
 }
 
+@keyframes arrow {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(5px);
+  }
+}
 .home-bg {
   position: absolute;
   top: 0px;
@@ -873,6 +887,7 @@ header.sticky {
 }
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -881,6 +896,26 @@ body {
   font-weight: 400;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+}
+
+.navigator-arrow {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: hsl(345, 88%, 46%);
+  width: 40px;
+  aspect-ratio: 1/1;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.arrow-icon {
+  animation: arrow 0.8s linear alternate infinite;
+  font-size: 1.5rem;
+  color: hsl(0, 0%, 100%);
 }
 
 .home {
@@ -896,6 +931,11 @@ body {
 }
 .home .hero-image {
   display: none;
+}
+.home .btn-outline {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 .btn-group {
