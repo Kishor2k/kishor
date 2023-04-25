@@ -88,9 +88,10 @@ const name = document.querySelector("#name");
 const email = document.querySelector("#email");
 const msg = document.querySelector("#msg");
 const form = document.querySelector("#form");
+const formBtn = document.querySelector("#form-btn");
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
+formBtn.addEventListener("click", () => {
+  // e.preventDefault();
   validateInputs();
 });
 
