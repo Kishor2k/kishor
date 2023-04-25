@@ -32,6 +32,9 @@
     display: block;
     padding-bottom: 8px;
   }
+  .form-row {
+    position: relative;
+  }
   input,
   textarea {
     width: 100%;
@@ -57,5 +60,29 @@
     color: $white;
     cursor: pointer;
     border: 1px solid $accent;
+  }
+  .form-btn {
+    width: 100%;
+  }
+  .form-row {
+    &.error {
+      p {
+        position: absolute;
+        color: $error;
+        bottom: -24px;
+        right: 0;
+        font-style: italic;
+      }
+      textarea,
+      input {
+        border: 1px solid $error;
+      }
+    }
+    &.success {
+      textarea,
+      input {
+        border: 1px solid $success;
+      }
+    }
   }
 }

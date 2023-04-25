@@ -735,7 +735,7 @@ header.sticky {
 
 .client-img {
   position: absolute;
-  top: -30%;
+  top: -25%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
@@ -743,6 +743,8 @@ header.sticky {
   border: 3px solid hsl(0, 0%, 100%);
   border-radius: 50%;
   overflow: hidden;
+  display: grid;
+  place-items: center;
 }
 
 .contact {
@@ -784,6 +786,9 @@ header.sticky {
   display: block;
   padding-bottom: 8px;
 }
+.form .form-row {
+  position: relative;
+}
 .form input,
 .form textarea {
   width: 100%;
@@ -810,6 +815,24 @@ header.sticky {
   color: hsl(0, 0%, 100%);
   cursor: pointer;
   border: 1px solid hsl(14, 100%, 60%);
+}
+.form .form-btn {
+  width: 100%;
+}
+.form .form-row.error p {
+  position: absolute;
+  color: rgb(215, 39, 39);
+  bottom: -24px;
+  right: 0;
+  font-style: italic;
+}
+.form .form-row.error textarea,
+.form .form-row.error input {
+  border: 1px solid rgb(215, 39, 39);
+}
+.form .form-row.success textarea,
+.form .form-row.success input {
+  border: 1px solid rgb(41, 163, 41);
 }
 
 @keyframes arrow {
@@ -944,6 +967,7 @@ body {
 
 .about {
   background: linear-gradient(160deg, hsl(0, 0%, 100%) 0%, hsl(345, 13%, 94%) 100%);
+  position: relative;
 }
 
 .about-content {
@@ -1030,6 +1054,9 @@ body {
 @media screen and (min-width: 1000px) {
   :root {
     --gap: 1.5rem;
+  }
+  .navigator-arrow {
+    display: none;
   }
   header {
     padding-block: 2rem;

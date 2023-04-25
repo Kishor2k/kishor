@@ -14,47 +14,7 @@ menu.addEventListener("click", () => {
   navMenu.classList.toggle("active");
 });
 
-// navigation link hover animation with respect to sections
-// const sections = document.querySelectorAll("section");
-// const links = document.querySelectorAll(".nav-menu a");
-
-// const options = {
-//   threshold: "0.1",
-// };
-// const sectionObserver = new IntersectionObserver((entries) => {
-//   entries.forEach((entry) => {
-//     if (entry.isIntersecting) {
-//       links.forEach((link) => {
-//         link.removeAttribute("aria-current");
-//         let sectionId = "#" + entry.target.id;
-//         let linkId = link.getAttribute("href");
-//         if (sectionId === linkId) {
-//           let sectionRect = entry.target.getBoundingClientRect();
-//           let sectionHeight = entry.target.offsetHeight;
-//           let sectionTop = entry.target.offsetTop;
-//           const vh = Math.max(
-//             document.documentElement.clientHeight || 0,
-//             window.innerHeight || 0
-//           );
-//           console.log(entry.target);
-//           console.log(sectionRect.top);
-//           console.log(sectionRect.bottom);
-//           console.log(sectionHeight);
-//           console.log(sectionTop);
-//           console.log("vh", vh);
-
-//           if (sectionRect.top < vh) {
-//             link.setAttribute("aria-current", "page");
-//             console.log("ok");
-//           }
-//         }
-//       });
-//     }
-//   });
-// }, options);
-// sections.forEach((section) => {
-//   sectionObserver.observe(section);
-// });
+// fade animations
 fadeOptions = {
   threshold: 0.4,
 };
@@ -122,3 +82,58 @@ navigatorArrow.addEventListener("click", () => {
     window.scrollBy(0, -window.scrollY);
   }
 });
+
+// form validation
+const name = document.querySelector("#name");
+const email = document.querySelector("#email");
+const msg = document.querySelector("#msg");
+const form = document.querySelector("#form");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  validateInputs();
+});
+
+function setError(element, message = "This field is required") {
+  let formRow = element.parentNode;
+  let error = formRow.querySelector("p");
+  formRow.classList.add("error");
+  formRow.classList.remove("success");
+  error.innerText = message;
+}
+function setSuccess(element) {
+  let formRow = element.parentNode;
+  let error = formRow.querySelector("p");
+  error.innerText = "";
+  formRow.classList.remove("error");
+  formRow.classList.add("success");
+}
+function validateInputs() {
+  let nameVal = name.value;
+  let emailVal = email.value.trim();
+  let msgVal = msg.value;
+  let regex =
+    /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+
+  if (nameVal === null || nameVal === "") {
+    setError(name);
+  } else {
+    setSuccess(name);
+  }
+  if (emailVal === null || emailVal === "") {
+    setError(email);
+  } else {
+    setSuccess(email);
+  }
+  if (!regex.test(emailVal)) {
+    setError(email, "Enter a valid mail");
+  } else {
+    setSuccess(email);
+  }
+
+  if (msgVal === null || msgVal === "") {
+    setError(msg);
+  } else {
+    setSuccess(msg);
+  }
+}

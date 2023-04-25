@@ -19,7 +19,9 @@
   :root {
     --gap: 1.5rem;
   }
-
+  .navigator-arrow {
+    display: none;
+  }
   // header
   header {
     padding-block: 2rem;

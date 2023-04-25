@@ -79,6 +79,7 @@
         </svg>
     </section>
     <section class="about" id="about">
+     
       <div class="container">
         <div class="head">
           <div class="head-info">
@@ -466,21 +467,24 @@
             </div>
           </div>
           <div class="contact-right slide-right">
-            <form action="" class="form flow">
+            <form action="mail.php" method="post" class="form flow" id="form" autocomplete="off">
               <div class="form-row">
-                <label for="fullname">Fullname</label>
-                <input type="text" placeholder="Enter Your Full Name">
+                <label for="name">Fullname</label>
+                <input type="text" name="fullname" placeholder="Enter Your Full Name" id="name">
+                <p></p><!--error classes-->
               </div>
               <div class="form-row">
                 <label for="email">Email</label>
-                <input type="text" placeholder="Enter Your Email">
+                <input type="text" name="email" placeholder="Enter Your Email" id="email">
+                <p></p><!--error classes-->
               </div>
               <div class="form-row">
-                <label for="message">Message</label>
-                <textarea placeholder="Your Message here..."></textarea>
+                <label for="msg">Message</label>
+                <textarea name="message" placeholder="Your Message here..." id="msg"></textarea>
+                <p></p><!--error classes-->
               </div>
               <div class="form-row">
-                <input type="button" class="btn btn-fill" value="Send">
+                <input type="submit" value="Send" class="btn btn-fill form-btn">
               </div>
             </form>
           </div>

@@ -79,12 +79,14 @@ body {
 // about
 .about {
   @include bg-gradient($white, $secondary-100);
+  position: relative;
 }
 .about-content {
   --flowspacer: 1rem;
   @extend .flex;
   gap: calc(var(--gap) * 2);
 }
+
 .about-img-container {
   max-width: 300px;
   position: relative;
